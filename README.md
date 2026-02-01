@@ -3,7 +3,7 @@
 **Nome:** Mbala Pinto Kunsunga  
 **Idade:** 18 anos  
 **Turma:** II12B  
-**Email:** mbala.kunsunga@example.com  
+**Email:** mbalakunsunga1@gamil.com  
 **GitHub:** https://github.com/Mbalahp  
 
 ## Sobre
