@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Portfólio  Mbala Pinto Kunsunga
 
 **Nome:** Mbala Pinto Kunsunga  
@@ -21,3 +22,8 @@ Estudante dedicado de Técnico de Informática, interessado em desenvolvimento w
 
 ## Site ao vivo
 https://mbalahp.github.io/meu_portifolio
+=======
+Mbala Pinto Kunsunga
+II12B
+N 18
+>>>>>>> 46e3403c161dd55586c534551ce87cf694c2c0cd
