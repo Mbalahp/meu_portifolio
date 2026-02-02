@@ -1,20 +1,251 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap");
+
+:root{
+  --bg: #0b0f1a;
+  --bg-2: #101725;
+  --panel: #121a2b;
+  --panel-2: #0d1526;
+  --text: #e5e7eb;
+  --muted: #9aa5b1;
+  --accent: #22d3ee;
+  --accent-2: #f97316;
+  --border: #22304a;
+  --shadow: 0 12px 30px rgba(2, 6, 23, 0.55);
+  --radius: 16px;
+  --maxw: 980px;
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial, Helvetica, sans-serif;background:#f0f0f0;color:#222;line-height:1.4;padding:18px}
-.cont{max-width:900px;margin:0 auto;padding:16px}
-.cab{background:#fff;border-bottom:1px solid #ddd;padding:10px}
-.cab .cont{display:flex;gap:10px;align-items:center}
-.avatar{width:80px;height:80px;border-radius:8px;object-fit:cover}
-h1{font-size:20px}
-#tt{color:#666;font-size:14px}
-main{padding:20px 0}
-h2{margin-bottom:10px}
-.grd{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.crd{background:#fff;padding:12px;border-radius:6px;border:1px solid #ddd}
-.crd img{width:100%;height:130px;object-fit:cover;border-radius:4px;margin-bottom:8px}
-.tec{font-size:14px;color:#666}
-.lnk a{color:#1e90ff;text-decoration:none}
-.rod{padding:10px 0;margin-top:20px;color:#666;font-size:13px;text-align:center}
-@media (max-width:600px){
-  .cab .cont{flex-direction:column;align-items:flex-start}
-  .avatar{width:60px;height:60px}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color:var(--text);
+  line-height:1.6;
+  min-height:100vh;
+  background:
+    radial-gradient(900px 420px at 6% -10%, rgba(34,211,238,0.18), transparent 60%),
+    radial-gradient(900px 420px at 95% -5%, rgba(249,115,22,0.16), transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 60%, var(--bg) 100%);
+  padding:28px 18px 40px;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px);
+  background-size: 38px 38px;
+  pointer-events:none;
+  z-index:-1;
+}
+
+a{color:var(--accent);text-decoration:none}
+a:hover{color:#7dd3fc}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+.cont{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:18px 22px;
+}
+
+.cab{
+  background:linear-gradient(135deg, var(--panel), var(--panel-2));
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.cab::after{
+  content:"";
+  position:absolute;
+  inset:auto -20% 0 -20%;
+  height:2px;
+  background:linear-gradient(90deg, transparent, var(--accent), var(--accent-2), transparent);
+  opacity:0.85;
+}
+.hero{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+
+.avatar{
+  width:90px;
+  height:90px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:1px;
+  color:#0b1220;
+  background:linear-gradient(135deg, #22d3ee, #a7f3d0);
+  box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.eyebrow{
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+h1{
+  font-family:"Fraunces", serif;
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:-0.3px;
+  margin-top:4px;
+}
+#tt{
+  color:var(--muted);
+  font-size:14px;
+}
+#ida{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(34,211,238,0.15);
+  border:1px solid rgba(34,211,238,0.35);
+  font-size:13px;
+  color:#c8f7ff;
+}
+.btn.ghost{
+  background:transparent;
+  border-color:rgba(249,115,22,0.35);
+  color:#ffd9c2;
+}
+
+main.cont{padding-top:8px}
+
+section{
+  background:rgba(15, 23, 42, 0.6);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  margin:16px 0;
+  box-shadow:var(--shadow);
+}
+
+h2{
+  font-family:"Fraunces", serif;
+  font-size:18px;
+  margin-bottom:10px;
+  color:#e2e8f0;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+h3{
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+#bio-peq{
+  font-weight:600;
+  color:#cbd5f5;
+  margin-bottom:8px;
+}
+
+ul{list-style:none;padding-left:0}
+ul li{
+  padding:6px 0;
+  border-bottom:1px dashed rgba(148,163,184,0.2);
+}
+ul li:last-child{border-bottom:none}
+
+#lstc{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:4px;
+}
+#lstc li{
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(148,163,184,0.25);
+  background:rgba(148,163,184,0.08);
+}
+
+.grd{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+  gap:14px;
+  margin-top:6px;
+}
+
+.crd{
+  background:linear-gradient(145deg, rgba(15,23,42,0.85), rgba(9,13,25,0.95));
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+  transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.crd:hover{
+  transform:translateY(-3px);
+  border-color:rgba(34,211,238,0.35);
+  box-shadow:0 16px 30px rgba(2,6,23,0.6);
+}
+
+.crd img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:8px;
+}
+
+.tec{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.lnk a{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(34,211,238,0.12);
+  border:1px solid rgba(34,211,238,0.25);
+  font-size:13px;
+  margin-top:6px;
+}
+
+#ct a{
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:3px;
+}
+
+.rod{
+  padding:14px 0;
+  margin-top:22px;
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
+}
+
+@media (max-width:700px){
+  .hero{flex-direction:column;align-items:flex-start}
+  .avatar{width:72px;height:72px;border-radius:14px}
+  h1{font-size:24px}
+  section{padding:16px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{scroll-behavior:auto}
+  .crd{transition:none}
 }
